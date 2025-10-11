@@ -1,0 +1,4 @@
+.buttonStart {
+    @apply w-40 h-14 bg-botao text-white hover:bg-blue-400 rounded-full text-lg
+    
+}

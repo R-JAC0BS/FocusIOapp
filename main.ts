@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, nativeTheme } from 'electron';
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -8,17 +8,25 @@ const __dirname = dirname(__filename);
 
 function createWindow() {
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1200,
+    height: 900,
+    backgroundColor: '#181818', // Cor de fundo da janela
+    darkTheme: true, // Força tema escuro no Linux
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
   });
 
   win.loadURL('http://localhost:5173/');
+
+  // Abre o DevTools automaticamente
+  win.webContents.openDevTools();
 }
 
 app.whenReady().then(() => {
+  // Força o tema escuro
+  nativeTheme.themeSource = 'dark';
+
   createWindow();
 
   app.on('activate', () => {
