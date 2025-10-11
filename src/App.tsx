@@ -11,9 +11,11 @@ import { VscGraph } from 'react-icons/vsc';
 import { FaInfinity } from 'react-icons/fa';
 import Logo from './components/logo/index.';
 import View from './components/View';
+import Settings from './Pages/Settings';
 
 export default function App() {
-  const [windowShow, setWindowShow] = useState<String>('')
+  const [windowShow, setWindowShow] = useState<String>('home')
+  const [check, setCheck] = useState<boolean> ()
   return (
     
     <View className="flex min-h-screen min-w-screen m-0 p-9 bg-geral">
@@ -32,7 +34,7 @@ export default function App() {
               <HomeCounter/>
             )}
              {windowShow === "settings" && (
-              <div>Settings</div>
+              <Settings></Settings>
             )}
       </View>
     </View>

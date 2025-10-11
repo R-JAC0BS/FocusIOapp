@@ -1,0 +1,11 @@
+.checkbox {
+    @apply w-5 h-5
+}
+
+.text {
+
+}
+
+.number {
+@apply rounded-md p-1 border border-[#989FAB] w-14  text-[#989FAB]
+}

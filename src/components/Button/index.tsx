@@ -27,7 +27,7 @@ const Button = ({ children, variant,isSelected, className = "", ...rest }: Butto
   return (
     <button
       {...rest}
-      className={`${baseClasses} ${variantClasses} ${btn[variant]} hover:bg-[#374151]  ${className} text-[#A0A0A0] ${buttonSelected}`}
+      className={`${baseClasses} ${variantClasses} ${btn[variant]} hover:bg-[#374151]   text-[#A0A0A0] ${buttonSelected} ${className}`}
     >
       {children}
     </button>
